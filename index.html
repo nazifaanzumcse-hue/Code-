@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <article class="profile-card">
+
+        <div class="avatar-container">
+            <img src="https://via.placeholder.com/150"
+                 alt="Nazifa Anzum"
+                 class="avatar">
+
+            <span class="online-status"></span>
+        </div>
+
+        <h1>
+            Nazifa Anzum
+            <span class="verified">✔</span>
+        </h1>
+
+        <p class="bio">
+            Computer Science Student & Web Enthusiast
+        </p>
+
+        <p class="location">
+            📍 Dhaka, Bangladesh
+        </p>
+
+        <p class="member">
+            Member Since 2024
+        </p>
+
+        <section class="completion">
+            <p>Profile Completion: 85%</p>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">UI Design</span>
+        </section>
+
+        <section class="likes">
+
+            <button class="like-btn"
+                    onclick="likeProfile()">
+
+                ❤ Like
+
+            </button>
+
+            <p>
+                Likes:
+                <span id="likesCount">245</span>
+            </p>
+
+        </section>
+
+        <section class="social-stats">
+
+            <ul>
+
+                <li>
+                    <span id="followers" class="number">
+                        8700
+                    </span>
+
+                    <span>
+                        Followers
+                    </span>
+                </li>
+
+                <li>
+                    <span class="number">
+                        320
+                    </span>
+
+                    <span>
+                        Following
+                    </span>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <div class="buttons">
+
+            <button class="follow-btn"
+                    id="followButton"
+                    onclick="followUser()">
+
+                Follow
+
+            </button>
+
+            <button class="message-btn"
+                    onclick="toggleChat()">
+
+                Message
+
+            </button>
+
+        </div>
+
+        <div id="chatBox" class="chat-box">
+
+            <h3>Chat with Nazifa</h3>
+
+            <textarea id="chatInput"
+                      placeholder="Type your message here..."></textarea>
+
+            <button class="send-btn"
+                    onclick="sendChat()">
+
+                Send
+
+            </button>
+
+        </div>
+
+        <p id="message"></p>
+
+    </article>
+
+    <script>
+
+        let isFollowing = false;
+        let followers = 8700;
+        let likes = 245;
+
+        function followUser() {
+
+            let btn =
+                document.getElementById("followButton");
+
+            let msg =
+                document.getElementById("message");
+
+            let followerDisplay =
+                document.getElementById("followers");
+
+            if (isFollowing === false) {
+
+                followers++;
+
+                followerDisplay.innerHTML =
+                    followers.toLocaleString();
+
+                btn.innerHTML =
+                    "Following ✓";
+
+                msg.innerHTML =
+                    "✅ You are now following Nazifa Anzum.";
+
+                msg.style.color =
+                    "green";
+
+                isFollowing = true;
+
+            } else {
+
+                followers--;
+
+                followerDisplay.innerHTML =
+                    followers.toLocaleString();
+
+                btn.innerHTML =
+                    "Follow";
+
+                msg.innerHTML =
+                    "❌ You unfollowed Nazifa Anzum.";
+
+                msg.style.color =
+                    "red";
+
+                isFollowing = false;
+            }
+        }
+
+        function likeProfile() {
+
+            likes++;
+
+            document.getElementById("likesCount")
+                .innerHTML = likes;
+        }
+
+        function toggleChat() {
+
+            let chatBox =
+                document.getElementById("chatBox");
+
+            if (chatBox.style.display === "block") {
+
+                chatBox.style.display = "none";
+
+            } else {
+
+                chatBox.style.display = "block";
+            }
+        }
+
+        function sendChat() {
+
+            let text =
+                document.getElementById("chatInput").value;
+
+            let message =
+                document.getElementById("message");
+
+            if (text.trim() === "") {
+
+                message.innerHTML =
+                    "⚠ Please type a message first.";
+
+                message.style.color =
+                    "orange";
+
+                return;
+            }
+
+            message.innerHTML =
+                "✅ Message sent successfully to Nazifa Anzum!";
+
+            message.style.color =
+                "green";
+
+            document.getElementById("chatInput").value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+}
+
+.profile-card{
+    background:white;
+
+    max-width:350px;
+    width:100%;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+    transition:0.3s;
+}
+
+.profile-card:hover{
+    transform:translateY(-5px);
+}
+
+.avatar-container{
+    position:relative;
+    display:inline-block;
+}
+
+.avatar{
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    margin-bottom:15px;
+}
+
+.online-status{
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#2ecc71;
+
+    border-radius:50%;
+
+    right:10px;
+    bottom:20px;
+
+    border:3px solid white;
+}
+
+h1{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.verified{
+    color:#3498db;
+}
+
+.bio{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.location,
+.member{
+    color:#777;
+    margin-bottom:10px;
+}
+
+.completion{
+    margin:20px 0;
+}
+
+.progress-bar{
+    width:100%;
+    height:10px;
+
+    background:#ddd;
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+.progress{
+    width:85%;
+    height:100%;
+
+    background:#2ecc71;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+    gap:8px;
+
+    margin:20px 0;
+}
+
+.tag{
+    background:#ecf5ff;
+
+    color:#3498db;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:14px;
+}
+
+.likes{
+    margin:20px 0;
+}
+
+.like-btn{
+    background:#e74c3c;
+    color:white;
+
+    border:none;
+
+    padding:10px 15px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+.like-btn:hover{
+    background:#c0392b;
+}
+
+.social-stats ul{
+    list-style:none;
+
+    display:flex;
+    justify-content:space-around;
+
+    margin:20px 0;
+}
+
+.social-stats li{
+    display:flex;
+    flex-direction:column;
+}
+
+.number{
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+
+    gap:10px;
+}
+
+.follow-btn,
+.message-btn{
+    border:none;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.follow-btn{
+    background:#3498db;
+}
+
+.follow-btn:hover{
+    background:#2980b9;
+}
+
+.message-btn{
+    background:#27ae60;
+}
+
+.message-btn:hover{
+    background:#219150;
+}
+
+.chat-box{
+    display:none;
+
+    margin-top:20px;
+}
+
+.chat-box h3{
+    margin-bottom:10px;
+}
+
+.chat-box textarea{
+    width:100%;
+    height:80px;
+
+    padding:10px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    resize:none;
+}
+
+.send-btn{
+    margin-top:10px;
+
+    background:#9b59b6;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.send-btn:hover{
+    background:#8e44ad;
+}
+
+#message{
+    margin-top:15px;
+
+    font-weight:bold;
+
+    min-height:25px;
+}
